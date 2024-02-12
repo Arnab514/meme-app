@@ -15,9 +15,8 @@ const Home = () => {
 
   return (
     <div className='flex flex-wrap gap-6'>
-      {data.map((elements) => <MemeCard img = {elements.url} title = {elements.name}/>
+      {data.map((elements) => <MemeCard key={elements.id} img = {elements.url} title = {elements.name}/>
       )}
-
     </div>
   )
 }

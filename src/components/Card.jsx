@@ -6,15 +6,14 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Memecard({img , title}) {
-  const navigate = useNavigate()
+function Memecard({img , title , id}) {
   
   return (
     <div>
-      <Card className="mt-6 w-96">
-        <CardHeader color="blue-gray" className="relative h-46">
+      <Card key={id} className="mt-6 w-56">
+        <CardHeader color="blue-gray" className="relative h-36">
           <img src = {img} />
         </CardHeader>
         <CardBody>
@@ -23,7 +22,9 @@ function Memecard({img , title}) {
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
-          <Button onClick = {(e) => navigate(`/edit?url=${img}`)} >Edit</Button>
+          <Link to = {`/edit/${img}`}>
+            <Button>Edit</Button>
+          </Link>
         </CardFooter>
       </Card>
     </div>

@@ -12,7 +12,7 @@ function App() {
       <h1>Meme Generator</h1>
     <Routes>
       <Route path='/' element = {<Home/>} />
-      <Route path='/edit/:URL' element = {<Edit/>} />
+      <Route path="/edit/:url" element = {<Edit/>} />
     </Routes>
     </>
   )

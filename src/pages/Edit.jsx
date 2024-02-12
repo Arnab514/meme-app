@@ -1,18 +1,13 @@
 import React from 'react'
-import { useSearchParams } from 'react-router-dom' 
+import { useParams } from 'react-router-dom' 
 
 const Edit = () => {
-  const [Params] = useSearchParams()
-  const myParams = Params.get("url")
-  console.log (myParams)
-
-  // const [searchParams] = useSearchParams();
-  // const urlParam = searchParams.get("url");
-  // console.log(urlParam.split("/").pop())
-
+  const {url} = useParams()
+  console.log(url)
+  
   return (
     <div>
-      I am Edit page
+      <img src= {url}  />
     </div>
   )
 }
