@@ -19,9 +19,30 @@ const Edit = () => {
   return (
 
     //this is also responsive for mobile as well
+    // <div className="flex flex-col items-center bg-blue-gray-800">
+    //   <div ref={memeRef} className="meme mt-5 mb-5 w-full max-w-xl">
+    //     <img src={memeImageUrl} alt="Meme" className="h-auto w-full" />
+    //     {Array(count).fill(0).map((e, index) => (
+    //       <Inputfield key={index} />
+    //     ))}
+    //   </div>
+    //   <div className="flex flex-col md:flex-row gap-4">
+    //     <Button onClick={handleText} color="blue">
+    //       Add Text
+    //     </Button>
+    //     <Button
+    //       variant="filled"
+    //       onClick={() => exportComponentAsJPEG(memeRef)}
+    //       color="green"
+    //     >
+    //       Save
+    //     </Button>
+    //   </div>
+    // </div>
+
     <div className="flex flex-col items-center bg-blue-gray-800">
       <div ref={memeRef} className="meme mt-5 mb-5 w-full max-w-xl">
-        <img src={memeImageUrl} alt="Meme" className="h-auto w-full" />
+        <img src={memeImageUrl} alt="Meme" className="object-cover w-full h-full" />
         {Array(count).fill(0).map((e, index) => (
           <Inputfield key={index} />
         ))}
@@ -32,7 +53,7 @@ const Edit = () => {
         </Button>
         <Button
           variant="filled"
-          onClick={() => exportComponentAsJPEG(memeRef)}
+          onClick={() => exportComponentAsJPEG(memeRef, { include: 'all', quality: 1 })}
           color="green"
         >
           Save
